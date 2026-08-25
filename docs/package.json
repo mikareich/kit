@@ -1,0 +1,30 @@
+{
+	"private": true,
+	"name": "@kit/docs",
+	"version": "0.0.0",
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.10",
+		"@kit/lib": "workspace:lib",
+		"typescript": "^7.0.2",
+		"storybook": "^10.5.10",
+		"@storybook/react-vite": "^10.5.10",
+		"@chromatic-com/storybook": "latest",
+		"@storybook/addon-vitest": "^10.5.10",
+		"@storybook/addon-a11y": "^10.5.10",
+		"@storybook/addon-docs": "^10.5.10",
+		"@storybook/addon-onboarding": "^10.5.10",
+		"vitest": "latest",
+		"playwright": "latest",
+		"@vitest/browser-playwright": "latest",
+		"@vitest/coverage-v8": "latest"
+	},
+	"dependencies": {
+		"@kit/ui": "workspace:ui",
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8"
+	},
+	"scripts": {
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
+	}
+}
