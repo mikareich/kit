@@ -1,53 +1,54 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.5.10/schema.json",
-	"formatter": {
-		"enabled": true,
-		"indentStyle": "tab"
+	"assist": {
+		"actions": {
+			"source": {
+				"preset": "all",
+				"useSortedPackageJson": "off"
+			}
+		},
+		"enabled": true
 	},
 	"css": {
 		"parser": {
 			"tailwindDirectives": true
 		}
 	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"preset": "recommended",
-			"a11y": "on",
-			"complexity": "on",
-			"correctness": {
-				"preset": "all",
-				"noNodejsModules": "off"
-			},
-			"nursery": "on",
-			"performance": "on",
-			"security": "on",
-			"style": "on",
-			"suspicious": "on"
-		},
-		"domains": {
-			"next": "all",
-			"tailwind": "all",
-			"react": "all",
-			"drizzle": "all",
-			"solid": "none"
-		}
-	},
-	"assist": {
-		"enabled": true,
-		"actions": {
-			"source": {
-				"organizeImports": "on"
-			}
-		}
-	},
 	"files": {
 		"ignoreUnknown": true
 	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab"
+	},
+	"linter": {
+		"domains": {
+			"drizzle": "all",
+			"next": "all",
+			"react": "all",
+			"solid": "none",
+			"tailwind": "all"
+		},
+		"enabled": true,
+		"rules": {
+			"a11y": "on",
+			"complexity": "on",
+			"correctness": {
+				"noNodejsModules": "off",
+				"preset": "all"
+			},
+			"nursery": "on",
+			"performance": "on",
+			"preset": "recommended",
+			"security": "on",
+			"style": "on",
+			"suspicious": "on"
+		}
+	},
+	"root": false,
 	"vcs": {
 		"clientKind": "git",
 		"enabled": true,
 		"useIgnoreFile": true
-	},
-	"root": false
+	}
 }

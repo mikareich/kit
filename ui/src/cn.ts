@@ -6,18 +6,6 @@ import { extendTailwindMerge } from "tailwind-merge";
 // https://github.com/dcastil/tailwind-merge/blob/main/docs/configuration.md
 const twMerge = extendTailwindMerge<string, string>({
 	extend: {
-		theme: {
-			text: [
-				"theme-title",
-				"theme-h1",
-				"theme-h2",
-				"theme-h3",
-				"theme-h4",
-				"theme-lg",
-				"theme-base",
-				"theme-sm",
-			],
-		},
 		classGroups: {
 			"semantic-theme": ["default", "error", "warning"],
 			"text-styles": [{ text: ["action", "body"] }],
@@ -31,6 +19,18 @@ const twMerge = extendTailwindMerge<string, string>({
 				"text-transform",
 				"text-color",
 				"select",
+			],
+		},
+		theme: {
+			text: [
+				"theme-title",
+				"theme-h1",
+				"theme-h2",
+				"theme-h3",
+				"theme-h4",
+				"theme-lg",
+				"theme-base",
+				"theme-sm",
 			],
 		},
 	},

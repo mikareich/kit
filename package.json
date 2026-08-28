@@ -1,13 +1,13 @@
 {
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.10",
+		"@kit/lib": "workspace:lib"
+	},
 	"name": "kit",
 	"private": true,
 	"workspaces": [
 		"docs",
 		"lib",
 		"ui"
-	],
-	"devDependencies": {
-		"@biomejs/biome": "^2.5.10",
-		"@kit/lib": "workspace:lib"
-	}
+	]
 }

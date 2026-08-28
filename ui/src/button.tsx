@@ -15,6 +15,22 @@ const buttonStyles = cva(
 	text-action
 	`,
 	{
+		compoundVariants: [
+			{
+				className: `
+									hover:bg-theme-primary/80 focus:bg-theme-primary/80
+									`,
+				disabled: false,
+				mode: "filled",
+			},
+			{
+				className: `
+									 hover:bg-theme-bg-accent
+									 `,
+				disabled: false,
+				mode: ["outlined", "ghost", "icon"],
+			},
+		],
 		variants: {
 			disabled: {
 				true: `
@@ -26,10 +42,6 @@ const buttonStyles = cva(
 								bg-theme-primary text-theme-foreground
 								border border-theme-primary
 								`,
-				outlined: `
-								  bg-transparent text-theme-text
-									border border-theme-border
-									`,
 				ghost: `
 							 bg-transparent text-theme-text
 							 border border-transparent
@@ -39,24 +51,12 @@ const buttonStyles = cva(
 							border border-theme-border
 							p-3
               `,
-			},
-		},
-		compoundVariants: [
-			{
-				disabled: false,
-				mode: "filled",
-				className: `
-									hover:bg-theme-primary/80 focus:bg-theme-primary/80
+				outlined: `
+								  bg-transparent text-theme-text
+									border border-theme-border
 									`,
 			},
-			{
-				disabled: false,
-				mode: ["outlined", "ghost", "icon"],
-				className: `
-									 hover:bg-theme-bg-accent
-									 `,
-			},
-		],
+		},
 	},
 );
 
@@ -110,7 +110,7 @@ export function Button({
 	return (
 		<Comp
 			className={cn(
-				buttonStyles({ mode, disabled: effectiveDisabled }),
+				buttonStyles({ disabled: effectiveDisabled, mode }),
 				className,
 			)}
 			{...props}

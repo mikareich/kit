@@ -1,3 +1,48 @@
 {
-	"items": []
+	"$schema": "https://ui.shadcn.com/schema/registry.json",
+	"items": [
+		{
+			"author": "Mika Reich <mika@reich.re>",
+			"dependencies": ["@radix-ui/react-slot", "@radix-ui/react-icons"],
+			"description": "The Button primitive.",
+			"docs": "https://kit.reich.re/?path=/docs/ui-button--docs",
+			"files": [
+				{
+					"path": "./src/button.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"name": "button",
+			"registryDependencies": ["@kit/ui/base"],
+			"title": "Button",
+			"type": "registry:ui"
+		},
+		{
+			"author": "Mika Reich <mika@reich.re>",
+			"dependencies": [
+				"@radix-ui/react-icons",
+				"class-variance-authority",
+				"clsx",
+				"react",
+				"react-dom",
+				"tailwind-merge",
+				"tailwind"
+			],
+			"description": "Base functions, dependencies and configurations.",
+			"docs": "https://kit.reich.re/",
+			"files": [
+				{
+					"path": "./src/cn.ts",
+					"type": "registry:lib"
+				},
+				{
+					"path": "./src/theme.css",
+					"type": "registry:style"
+				}
+			],
+			"name": "base",
+			"title": "Base",
+			"type": "registry:base"
+		}
+	]
 }

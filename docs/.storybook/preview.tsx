@@ -5,17 +5,17 @@ import { definePreview } from "@storybook/react-vite";
 
 // biome-ignore lint/style/noDefaultExport: expected by storybook
 export default definePreview({
+	addons: [addonA11y(), addonDocs()],
 	parameters: {
+		a11y: {
+			test: "todo",
+		},
 		controls: {
 			matchers: {
 				color: /(?:background|color)$/iu,
 				date: /Date$/iu,
 			},
 		},
-		a11y: {
-			test: "todo",
-		},
 	},
-	addons: [addonA11y(), addonDocs()],
 	tags: ["autodocs"],
 });

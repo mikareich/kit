@@ -4,9 +4,44 @@ import * as RadixIcons from "@radix-ui/react-icons";
 import preview from "../../.storybook/preview.tsx";
 
 const ButtonMeta = preview.meta({
-	title: "UI / Button",
-	component: Button,
 	argTypes: {
+		asChild: {
+			description:
+				"Whether to hoist the child element as container. Uses `@radix-ui/slot`.",
+			table: {
+				defaultValue: {
+					summary: "false",
+				},
+			},
+		},
+		disabled: {
+			table: {
+				defaultValue: {
+					summary: "null",
+				},
+			},
+			type: "boolean",
+		},
+		loading: {
+			description:
+				"Displays a loading spinner instead of the prefix icon or child for icon buttons.",
+			table: {
+				defaultValue: {
+					summary: "null",
+				},
+			},
+			type: "boolean",
+		},
+		mode: {
+			control: "select",
+			description: "The display mode of the button.",
+			options: ["filled", "outlined", "ghost", "icon"],
+			table: {
+				defaultValue: {
+					summary: "filled",
+				},
+			},
+		},
 		prefixIcon: {
 			description: "The prefix icon to display. Hidden on icon buttons.",
 			table: {
@@ -23,91 +58,56 @@ const ButtonMeta = preview.meta({
 				},
 			},
 		},
-		asChild: {
-			table: {
-				defaultValue: {
-					summary: "false",
-				},
-			},
-			description:
-				"Whether to hoist the child element as container. Uses `@radix-ui/slot`.",
-		},
-		mode: {
-			table: {
-				defaultValue: {
-					summary: "filled",
-				},
-			},
-			description: "The display mode of the button.",
-			options: ["filled", "outlined", "ghost", "icon"],
-			control: "select",
-		},
-		loading: {
-			table: {
-				defaultValue: {
-					summary: "null",
-				},
-			},
-			description:
-				"Displays a loading spinner instead of the prefix icon or child for icon buttons.",
-			type: "boolean",
-		},
-		disabled: {
-			table: {
-				defaultValue: {
-					summary: "null",
-				},
-			},
-			type: "boolean",
-		},
 	},
+	component: Button,
+	title: "UI / Button",
 });
 
 export const DefaultButton = ButtonMeta.story({
 	args: {
 		children: "Button",
+		mode: "filled",
 		prefixIcon: <RadixIcons.PlusIcon />,
 		suffixIcon: <RadixIcons.MinusIcon />,
-		mode: "filled",
 	},
 	argTypes: ButtonMeta.input.argTypes,
 });
 
 export const OutlinedButton = ButtonMeta.story({
-	name: "Outlined Button",
 	args: {
 		...DefaultButton.input.args,
 		children: "Button",
 		mode: "outlined",
 	},
 	argTypes: ButtonMeta.input.argTypes,
+	name: "Outlined Button",
 });
 
 export const GhostButton = ButtonMeta.story({
-	name: "Ghost Button",
 	args: {
 		...DefaultButton.input.args,
 		children: "Button",
 		mode: "ghost",
 	},
 	argTypes: ButtonMeta.input.argTypes,
+	name: "Ghost Button",
 });
 
 export const AsChildButton = ButtonMeta.story({
-	name: "As Child Button",
 	args: {
 		...DefaultButton.input.args,
-		children: <a href="/">{DefaultButton.input.args.children}</a>,
 		asChild: true,
+		children: <a href="/">{DefaultButton.input.args.children}</a>,
 	},
 	argTypes: ButtonMeta.input.argTypes,
+	name: "As Child Button",
 });
 
 export const IconButton = ButtonMeta.story({
-	name: "Icon Button",
 	args: {
 		children: <RadixIcons.PlusIcon />,
 		mode: "icon",
 	},
 	argTypes: ButtonMeta.input.argTypes,
+	name: "Icon Button",
 });

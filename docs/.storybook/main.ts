@@ -8,16 +8,16 @@ function getAbsolutePath(value: string): string {
 
 // biome-ignore lint/style/noDefaultExport: expected by storybook
 export default defineMain({
-	stories: ["../stories/**/*.mdx", "../stories/**/*.story.tsx"],
 	addons: [
 		getAbsolutePath("@chromatic-com/storybook"),
 		getAbsolutePath("@storybook/addon-vitest"),
 		getAbsolutePath("@storybook/addon-a11y"),
 		getAbsolutePath("@storybook/addon-docs"),
 	],
-	framework: getAbsolutePath("@storybook/react-vite"),
 	core: {
 		allowedHosts: ["dev-box"],
 	},
 	docs: {},
+	framework: getAbsolutePath("@storybook/react-vite"),
+	stories: ["../stories/**/*.mdx", "../stories/**/*.story.tsx"],
 });
