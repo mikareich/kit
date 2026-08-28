@@ -4,6 +4,11 @@
 		"enabled": true,
 		"indentStyle": "tab"
 	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -24,7 +29,8 @@
 			"next": "all",
 			"tailwind": "all",
 			"react": "all",
-			"drizzle": "all"
+			"drizzle": "all",
+			"solid": "none"
 		}
 	},
 	"assist": {

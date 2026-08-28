@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+@source "./";
+
+:root,
+.default {
+	--theme-font-body: "Geist";
+	--theme-font-heading: "Geist";
+
+	--theme-bg: var(--color-white);
+	--theme-bg-accent: var(--color-gray-50);
+
+	--theme-primary: var(--color-blue-500);
+	--theme-foreground: var(--color-white);
+	--theme-foreground-subtle: var(--color-gray-100);
+
+	--theme-text: var(--color-gray-700);
+	--theme-text-subtle: var(--color-gray-500);
+
+	--theme-border: var(--color-gray-200);
+}
+
+.error {
+	--theme-bg-accent: var(--color-red-50);
+	--theme-primary: var(--color-red-600);
+	--theme-foreground: var(--color-white);
+	--theme-foreground-subtle: var(--color-red-100);
+	--theme-text: var(--color-red-700);
+	--theme-text-subtle: var(--color-red-500);
+	--theme-border: var(--color-red-300);
+}
+
+.warning {
+	--theme-bg-accent: var(--color-amber-50);
+	--theme-primary: var(--color-amber-400);
+	--theme-foreground: var(--color-gray-950);
+	--theme-foreground-subtle: var(--color-amber-900);
+	--theme-text: var(--color-amber-800);
+	--theme-text-subtle: var(--color-amber-600);
+	--theme-border: var(--color-amber-300);
+}
+
+@theme inline {
+	--font-body: var(--theme-font-body);
+	--font-heading: var(--theme-font-heading);
+
+	--color-theme-bg: var(--theme-bg);
+	--color-theme-bg-accent: var(--theme-bg-accent);
+
+	--color-theme-primary: var(--theme-primary);
+	--color-theme-foreground: var(--theme-foreground);
+	--color-theme-foreground-subtle: var(--theme-foreground-subtle);
+
+	--color-theme-text: var(--theme-text);
+	--color-theme-text-subtle: var(--theme-text-subtle);
+
+	--color-theme-border: var(--theme-border);
+
+	--text-theme-title: 47.78px;
+	--text-theme-h1: 39.81px;
+	--text-theme-h2: 33.18px;
+	--text-theme-h3: 27.65px;
+	--text-theme-h4: 23.04px;
+	--text-theme-lg: 19.2px;
+	--text-theme-base: 16px;
+	--text-theme-sm: 13.33px;
+}
+
+@utility text-action {
+	@apply font-heading uppercase font-medium text-theme-base leading-none;
+}
+
+@utility text-body {
+	@apply font-body font-normal text-theme-base leading-loose;
+}

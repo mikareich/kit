@@ -1,11 +1,129 @@
+// biome-ignore lint/performance/noNamespaceImport: avoids a false missing-export diagnostic from the package's legacy barrel
+import * as RadixIcons from "@radix-ui/react-icons";
+import { Slot, Slottable } from "@radix-ui/react-slot";
+import { cva } from "class-variance-authority";
 import type React from "react";
+import { cloneElement, isValidElement } from "react";
+import { cn } from "./cn.ts";
 
-const BUTTON_TEXT = "I am a button";
+const buttonStyles = cva(
+	`
+	flex gap-2 items-center
+	w-fit px-4 py-3
+	cursor-pointer
+	transition-all
+	text-action
+	`,
+	{
+		variants: {
+			disabled: {
+				true: `
+		          opacity-50 cursor-not-allowed
+							`,
+			},
+			mode: {
+				filled: `
+								bg-theme-primary text-theme-foreground
+								border border-theme-primary
+								`,
+				outlined: `
+								  bg-transparent text-theme-text
+									border border-theme-border
+									`,
+				ghost: `
+							 bg-transparent text-theme-text
+							 border border-transparent
+							 `,
+				icon: `
+              bg-transparent text-theme-text
+							border border-theme-border
+							p-3
+              `,
+			},
+		},
+		compoundVariants: [
+			{
+				disabled: false,
+				mode: "filled",
+				className: `
+									hover:bg-theme-primary/80 focus:bg-theme-primary/80
+									`,
+			},
+			{
+				disabled: false,
+				mode: ["outlined", "ghost", "icon"],
+				className: `
+									 hover:bg-theme-bg-accent
+									 `,
+			},
+		],
+	},
+);
 
-export function Button(): React.ReactElement {
+type ButtonProps = React.ComponentProps<"button"> & {
+	prefixIcon?: React.ReactNode;
+	suffixIcon?: React.ReactNode;
+	asChild?: boolean;
+	loading?: boolean;
+	mode: "filled" | "outlined" | "ghost" | "icon";
+};
+
+export function Button({
+	className,
+	prefixIcon,
+	suffixIcon,
+	children,
+	asChild,
+	disabled,
+	loading,
+	mode = "filled",
+	...props
+}: ButtonProps): React.ReactElement {
+	let Comp: typeof Slot | "button" = "button";
+	if (asChild) {
+		Comp = Slot;
+	}
+
+	const effectiveDisabled = disabled || loading;
+	let effectivePrefixIcon = prefixIcon;
+	let effectiveSuffixIcon = suffixIcon;
+	let effectiveChildren = children;
+	const loadingIcon = <RadixIcons.ReloadIcon className="animate-spin" />;
+
+	if (loading) {
+		effectivePrefixIcon = loadingIcon;
+	}
+
+	if (mode === "icon") {
+		effectivePrefixIcon = null;
+		effectiveSuffixIcon = null;
+
+		if (loading) {
+			effectiveChildren = loadingIcon;
+
+			if (asChild && isValidElement(children)) {
+				effectiveChildren = cloneElement(children, undefined, loadingIcon);
+			}
+		}
+	}
+
 	return (
-		<button type="button" aria-label="lol">
-			{BUTTON_TEXT}
-		</button>
+		<Comp
+			className={cn(
+				buttonStyles({ mode, disabled: effectiveDisabled }),
+				className,
+			)}
+			{...props}
+		>
+			{effectivePrefixIcon !== null && effectivePrefixIcon !== undefined && (
+				<span className="opacity-50">{effectivePrefixIcon}</span>
+			)}
+
+			<Slottable>{effectiveChildren}</Slottable>
+
+			{effectiveSuffixIcon !== null && effectiveSuffixIcon !== undefined && (
+				<span className="opacity-50">{effectiveSuffixIcon}</span>
+			)}
+		</Comp>
 	);
 }
