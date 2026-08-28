@@ -55,21 +55,12 @@
 	--color-theme-text-subtle: var(--theme-text-subtle);
 
 	--color-theme-border: var(--theme-border);
-
-	--text-theme-title: 47.78px;
-	--text-theme-h1: 39.81px;
-	--text-theme-h2: 33.18px;
-	--text-theme-h3: 27.65px;
-	--text-theme-h4: 23.04px;
-	--text-theme-lg: 19.2px;
-	--text-theme-base: 16px;
-	--text-theme-sm: 13.33px;
 }
 
 @utility text-action {
-	@apply font-heading uppercase font-medium text-theme-base leading-none;
+	@apply font-heading uppercase font-medium text-base leading-none;
 }
 
 @utility text-body {
-	@apply font-body font-normal text-theme-base leading-loose;
+	@apply font-body font-normal text-base leading-loose;
 }
