@@ -9,7 +9,7 @@ import { cn } from "./cn.ts";
 const buttonStyles = cva(
 	`
 	flex gap-2 items-center
-	w-fit px-4 py-3
+	w-fit max-w-full px-4 py-3
 	cursor-pointer
 	transition-all
 	text-action
@@ -116,13 +116,17 @@ export function Button({
 			{...props}
 		>
 			{effectivePrefixIcon !== null && effectivePrefixIcon !== undefined && (
-				<span className="opacity-50">{effectivePrefixIcon}</span>
+				<span className="shrink-0 opacity-50">{effectivePrefixIcon}</span>
 			)}
 
-			<Slottable>{effectiveChildren}</Slottable>
+			<Slottable child={effectiveChildren}>
+				{(child: React.ReactNode): React.ReactNode => (
+					<span className="min-w-0 flex-1 truncate">{child}</span>
+				)}
+			</Slottable>
 
 			{effectiveSuffixIcon !== null && effectiveSuffixIcon !== undefined && (
-				<span className="opacity-50">{effectiveSuffixIcon}</span>
+				<span className="shrink-0 opacity-50">{effectiveSuffixIcon}</span>
 			)}
 		</Comp>
 	);
