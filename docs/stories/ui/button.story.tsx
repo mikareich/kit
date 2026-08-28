@@ -7,17 +7,58 @@ const ButtonMeta = preview.meta({
 	title: "UI / Button",
 	component: Button,
 	argTypes: {
+		prefixIcon: {
+			description: "The prefix icon to display. Hidden on icon buttons.",
+			table: {
+				defaultValue: {
+					summary: "null",
+				},
+			},
+		},
+		suffixIcon: {
+			description: "The prefix icon to display. Hidden on icon buttons.",
+			table: {
+				defaultValue: {
+					summary: "null",
+				},
+			},
+		},
 		asChild: {
+			table: {
+				defaultValue: {
+					summary: "false",
+				},
+			},
 			description:
 				"Whether to hoist the child element as container. Uses `@radix-ui/slot`.",
 		},
 		mode: {
+			table: {
+				defaultValue: {
+					summary: "filled",
+				},
+			},
 			description: "The display mode of the button.",
 			options: ["filled", "outlined", "ghost", "icon"],
 			control: "select",
 		},
-		className: {
-			control: "text",
+		loading: {
+			table: {
+				defaultValue: {
+					summary: "null",
+				},
+			},
+			description:
+				"Displays a loading spinner instead of the prefix icon or child for icon buttons.",
+			type: "boolean",
+		},
+		disabled: {
+			table: {
+				defaultValue: {
+					summary: "null",
+				},
+			},
+			type: "boolean",
 		},
 	},
 });
@@ -25,11 +66,8 @@ const ButtonMeta = preview.meta({
 export const DefaultButton = ButtonMeta.story({
 	args: {
 		children: "Button",
-		asChild: false,
 		prefixIcon: <RadixIcons.PlusIcon />,
 		suffixIcon: <RadixIcons.MinusIcon />,
-		loading: false,
-		disabled: false,
 		mode: "filled",
 	},
 	argTypes: ButtonMeta.input.argTypes,
