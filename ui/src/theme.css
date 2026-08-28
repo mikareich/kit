@@ -8,7 +8,7 @@
 	--theme-font-heading: "Geist";
 
 	--theme-bg: var(--color-white);
-	--theme-bg-accent: var(--color-gray-50);
+	--theme-bg-accent: var(--color-gray-100);
 
 	--theme-primary: var(--color-blue-500);
 	--theme-foreground: var(--color-white);
@@ -21,7 +21,7 @@
 }
 
 .error {
-	--theme-bg-accent: var(--color-red-50);
+	--theme-bg-accent: var(--color-red-100);
 	--theme-primary: var(--color-red-600);
 	--theme-foreground: var(--color-white);
 	--theme-foreground-subtle: var(--color-red-100);
@@ -31,7 +31,7 @@
 }
 
 .warning {
-	--theme-bg-accent: var(--color-amber-50);
+	--theme-bg-accent: var(--color-amber-100);
 	--theme-primary: var(--color-amber-400);
 	--theme-foreground: var(--color-gray-950);
 	--theme-foreground-subtle: var(--color-amber-900);
@@ -58,9 +58,9 @@
 }
 
 @utility text-action {
-	@apply font-heading uppercase font-medium text-base leading-none;
+	@apply font-heading uppercase font-medium text-base leading-none select-none;
 }
 
 @utility text-body {
-	@apply font-body font-normal text-base leading-loose;
+	@apply font-body font-normal text-base leading-loose select-text;
 }

@@ -30,6 +30,7 @@ const twMerge = extendTailwindMerge<string, string>({
 				"leading",
 				"text-transform",
 				"text-color",
+				"select",
 			],
 		},
 	},
