@@ -84,7 +84,7 @@ export function Button({
 		Comp = Slot;
 	}
 
-	const effectiveDisabled = disabled || loading;
+	const effectiveDisabled = Boolean(disabled || loading);
 	let effectivePrefixIcon = prefixIcon;
 	let effectiveSuffixIcon = suffixIcon;
 	let effectiveChildren = children;
