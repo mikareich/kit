@@ -1,6 +1,5 @@
 import { Button } from "@kit/ui/button.tsx";
-// biome-ignore lint/performance/noNamespaceImport: avoids a false missing-export diagnostic from the package's legacy barrel
-import * as RadixIcons from "@radix-ui/react-icons";
+import { MinusIcon, PlusIcon } from "@radix-ui/react-icons";
 import preview from "../../.storybook/preview.tsx";
 
 const ButtonMeta = preview.meta({
@@ -67,8 +66,8 @@ export const DefaultButton = ButtonMeta.story({
 	args: {
 		children: "Button",
 		mode: "filled",
-		prefixIcon: <RadixIcons.PlusIcon />,
-		suffixIcon: <RadixIcons.MinusIcon />,
+		prefixIcon: <PlusIcon />,
+		suffixIcon: <MinusIcon />,
 	},
 	argTypes: ButtonMeta.input.argTypes,
 });
@@ -105,7 +104,7 @@ export const AsChildButton = ButtonMeta.story({
 
 export const IconButton = ButtonMeta.story({
 	args: {
-		children: <RadixIcons.PlusIcon />,
+		children: <PlusIcon />,
 		mode: "icon",
 	},
 	argTypes: ButtonMeta.input.argTypes,

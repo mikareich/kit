@@ -1,5 +1,4 @@
-// biome-ignore lint/performance/noNamespaceImport: avoids a false missing-export diagnostic from the package's legacy barrel
-import * as RadixIcons from "@radix-ui/react-icons";
+import { ReloadIcon } from "@radix-ui/react-icons";
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import type React from "react";
@@ -88,7 +87,7 @@ export function Button({
 	let effectivePrefixIcon = prefixIcon;
 	let effectiveSuffixIcon = suffixIcon;
 	let effectiveChildren = children;
-	const loadingIcon = <RadixIcons.ReloadIcon className="animate-spin" />;
+	const loadingIcon = <ReloadIcon className="animate-spin" />;
 
 	if (loading) {
 		effectivePrefixIcon = loadingIcon;
