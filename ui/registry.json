@@ -19,6 +19,7 @@
 		},
 		{
 			"author": "Mika Reich <mika@reich.re>",
+			"baseColor": "custom",
 			"dependencies": [
 				"@radix-ui/react-icons",
 				"class-variance-authority",
@@ -41,8 +42,10 @@
 				}
 			],
 			"name": "base",
+			"theme": "custom",
 			"title": "Base",
 			"type": "registry:base"
 		}
-	]
+	],
+	"name": "ui"
 }
