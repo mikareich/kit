@@ -42,7 +42,10 @@
 			"preset": "recommended",
 			"security": "on",
 			"style": "on",
-			"suspicious": "on"
+			"suspicious": {
+				"noConsole": "info",
+				"preset": "all"
+			}
 		}
 	},
 	"root": false,

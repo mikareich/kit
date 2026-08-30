@@ -1,6 +1,7 @@
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineMain } from "@storybook/react-vite/node";
+import { initApi } from "./api.ts";
 
 function getAbsolutePath(value: string): string {
 	return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)));
@@ -20,4 +21,5 @@ export default defineMain({
 	docs: {},
 	framework: getAbsolutePath("@storybook/react-vite"),
 	stories: ["../stories/**/*.mdx", "../stories/**/*.story.tsx"],
+	viteFinal: initApi,
 });
