@@ -19,7 +19,7 @@
 				}
 			],
 			"name": "button",
-			"registryDependencies": ["@kit/cn", "@kit/theme"],
+			"registryDependencies": ["@kit/base"],
 			"title": "Button",
 			"type": "registry:ui"
 		},

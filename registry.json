@@ -2,5 +2,16 @@
 	"$schema": "https://ui.shadcn.com/schema/registry.json",
 	"homepage": "kit.reich.re",
 	"include": ["lib/registry.json", "ui/registry.json"],
+	"items": [
+		{
+			"author": "Mika Reich <mika@reich.re>",
+			"description": "Base configuration for the kit design system.",
+			"extends": "none",
+			"name": "base",
+			"registryDependencies": ["@kit/cn", "@kit/theme"],
+			"title": "Kit",
+			"type": "registry:base"
+		}
+	],
 	"name": "kit"
 }
