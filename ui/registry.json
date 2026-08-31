@@ -3,48 +3,41 @@
 	"items": [
 		{
 			"author": "Mika Reich <mika@reich.re>",
-			"dependencies": ["@radix-ui/react-slot", "@radix-ui/react-icons"],
+			"dependencies": [
+				"@radix-ui/react-icons",
+				"@radix-ui/react-slot",
+				"class-variance-authority",
+				"react"
+			],
 			"description": "The Button primitive.",
 			"docs": "https://kit.reich.re/?path=/docs/ui-button--docs",
 			"files": [
 				{
 					"path": "./src/button.tsx",
+					"target": "@ui/button.tsx",
 					"type": "registry:ui"
 				}
 			],
 			"name": "button",
-			"registryDependencies": ["@kit/ui/base"],
+			"registryDependencies": ["@kit/cn", "@kit/theme"],
 			"title": "Button",
 			"type": "registry:ui"
 		},
 		{
 			"author": "Mika Reich <mika@reich.re>",
-			"baseColor": "custom",
-			"dependencies": [
-				"@radix-ui/react-icons",
-				"class-variance-authority",
-				"clsx",
-				"react",
-				"react-dom",
-				"tailwind-merge",
-				"tailwind"
-			],
-			"description": "Base functions, dependencies and configurations.",
+			"dependencies": ["tailwindcss"],
+			"description": "Theme styles and Tailwind utilities.",
 			"docs": "https://kit.reich.re/",
 			"files": [
 				{
-					"path": "./src/cn.ts",
-					"type": "registry:lib"
-				},
-				{
 					"path": "./src/theme.css",
+					"target": "@components/theme.css",
 					"type": "registry:style"
 				}
 			],
-			"name": "base",
-			"theme": "custom",
-			"title": "Base",
-			"type": "registry:base"
+			"name": "theme",
+			"title": "Theme",
+			"type": "registry:style"
 		}
 	],
 	"name": "ui"

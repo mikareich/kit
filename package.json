@@ -1,13 +1,24 @@
 {
 	"devDependencies": {
-		"@biomejs/biome": "^2.5.10",
-		"@kit/lib": "workspace:lib"
+		"@biomejs/biome": "^2.5.10"
+	},
+	"exports": {
+		"./biome.json": "./lib/src/biome/base.json"
 	},
 	"name": "kit",
 	"private": true,
 	"workspaces": [
 		"docs",
-		"lib",
-		"ui"
-	]
+		"."
+	],
+	"dependencies": {
+		"@radix-ui/react-icons": "^1.3.2",
+		"@radix-ui/react-slot": "^1.3.3",
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8",
+		"tailwind-merge": "^3.6.0",
+		"tailwindcss": "^4.3.3"
+	}
 }

@@ -1,4 +1,4 @@
-import { Button } from "@kit/ui/button.tsx";
+import { Button } from "@/ui/button";
 import { MinusIcon, PlusIcon } from "@radix-ui/react-icons";
 import preview from "../../.storybook/preview.tsx";
 

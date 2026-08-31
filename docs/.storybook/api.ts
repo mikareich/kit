@@ -72,6 +72,9 @@ export function initApi(
 	}
 	config.server.allowedHosts = Array.from(allowedHosts);
 
+	config.resolve ??= {};
+	config.resolve.tsconfigPaths = true;
+
 	config.plugins ??= [];
 	config.plugins.push({ configureServer: api, name: "api" });
 

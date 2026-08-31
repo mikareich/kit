@@ -1,3 +1,38 @@
 {
-	"items": []
+	"$schema": "https://ui.shadcn.com/schema/registry.json",
+	"items": [
+		{
+			"author": "Mika Reich <mika@reich.re>",
+			"dependencies": ["clsx", "tailwind-merge"],
+			"description": "Utility for conditionally merging class names.",
+			"docs": "https://kit.reich.re/",
+			"files": [
+				{
+					"path": "./src/cn.ts",
+					"target": "@lib/cn.ts",
+					"type": "registry:lib"
+				}
+			],
+			"name": "cn",
+			"title": "cn",
+			"type": "registry:lib"
+		},
+		{
+			"author": "Mika Reich <mika@reich.re>",
+			"description": "Shared base configuration for Biome.",
+			"devDependencies": ["@biomejs/biome"],
+			"docs": "https://kit.reich.re/",
+			"files": [
+				{
+					"path": "./src/biome/base.json",
+					"target": "biome/base.json",
+					"type": "registry:file"
+				}
+			],
+			"name": "biome",
+			"title": "Biome",
+			"type": "registry:item"
+		}
+	],
+	"name": "lib"
 }

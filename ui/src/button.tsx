@@ -1,9 +1,9 @@
+import { cn } from "@/lib/cn";
 import { ReloadIcon } from "@radix-ui/react-icons";
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import type React from "react";
 import { cloneElement, isValidElement } from "react";
-import { cn } from "./cn.ts";
 
 const buttonStyles = cva(
 	`
@@ -67,6 +67,10 @@ type ButtonProps = React.ComponentProps<"button"> & {
 	mode: "filled" | "outlined" | "ghost" | "icon";
 };
 
+/**
+ * Button primitive extending the native button element.
+ * @link https://kit.reich.re/?path=/docs/ui-button--docs
+ */
 export function Button({
 	className,
 	prefixIcon,
