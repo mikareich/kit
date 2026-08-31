@@ -7,6 +7,7 @@ const REGISTRY_BASE_URL = join(import.meta.dirname, "..", "..");
 const SUCCESS_CODE = 200;
 const INTERNAL_ERROR_CODE = 500;
 const ITEM_NAME_REGEX = /^\/r\/(?<name>[^/]+)\.json$/u;
+const ALLOWED_HOSTS = ["dev-box", "kit.reich.re"] as const
 
 function api(server: ViteDevServer): void {
 	server.middlewares.use("/r/", async (req, res) => {
@@ -59,12 +60,13 @@ function api(server: ViteDevServer): void {
 
 type ViteFinal = typeof viteFinal;
 
+// configure vite server to serve api
 export function initApi(
 	config: Parameters<ViteFinal>[0],
 ): ReturnType<ViteFinal> {
 	config.server ??= {};
 
-	const allowedHosts = new Set<string>(["dev-box"]);
+	const allowedHosts = new Set<string>(ALLOWED_HOSTS);
 	if (Array.isArray(config?.server?.allowedHosts)) {
 		for (const host of config.server.allowedHosts) {
 			allowedHosts.add(host);

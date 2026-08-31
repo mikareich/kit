@@ -36,7 +36,7 @@ const twMerge = extendTailwindMerge<string, string>({
 	},
 });
 
-/** merges tailwind classes and ensures only the last conflicting class is kept */
+/** Merges tailwind classes and ensures only the last conflicting class is kept. */
 export function cn(...inputs: ClassValue[]): string {
 	return twMerge(clsx(inputs));
 }
