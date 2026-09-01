@@ -1,26 +1,35 @@
 ---
 title: Kit
-description: Reusable primitives distributed through a shadcn registry.
+description: Registry for various reusable primitives.
 ---
 
-Kit is a small collection of reusable UI primitives, styles, and utilities. This site documents the same source files that the registry distributes.
+Kit is a collection of code helpers, UI primitives and an opinionated design
+language.
 
-## Install from the registry
+This personal project is the consequence of writing the same code over and over
+again for many years now. At this point, it is pure muscle memory to configure
+biome, write a button or set-up a css theme.
 
-Add the Kit namespace to a project configured for shadcn:
+As a developer having DRY (dont-repeat-yourself) wired into my brain, it is like
+hitting your toe against the same edge constantly in a procedual way. Time for a
+change!
 
-```bash
-bunx shadcn registry add @kit=https://kit.reich.re/r/{name}.json
+## Setup
+
+Kit uses [shadcn/registry](https://ui.shadcn.com/docs/registry) as a
+distribution backend for collected items. The registry is reachable over the
+[GitHub repository](https://github.com/mikareich/kit).
+
+The _first_ registry item you add to your codebase must be added through shadcn's
+`init` command. Otherwise, shadcn prompts you through the default setup
+procedure which is incompatible with this registry.
+
+```bash title="Adding the first item"
+bunx --bun shadcn@latest init mikareich/kit/[item]
 ```
 
-Then install an item:
+After that you should continue adding items with the `add` command:
 
-```bash
-bunx shadcn add @kit/button
+```bash title="Adding more items"
+bunx --bun shadcn@latest add mikareich/kit/[item]
 ```
-
-## Documentation
-
-- [Button](./components/button.mdx) combines written guidance with an interactive component story.
-- [Theming](./theming.mdx) explains the semantic theme modes and Tailwind utilities.
-- [`/r/registry.json`](/r/registry.json) exposes the resolved registry catalog.
