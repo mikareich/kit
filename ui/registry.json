@@ -19,7 +19,7 @@
 				}
 			],
 			"name": "button",
-			"registryDependencies": ["@kit/base"],
+			"registryDependencies": ["mikareich/kit/base"],
 			"title": "Button",
 			"type": "registry:ui"
 		},

@@ -8,7 +8,7 @@
 			"description": "Base configuration for the kit design system.",
 			"extends": "none",
 			"name": "base",
-			"registryDependencies": ["@kit/cn", "@kit/theme"],
+			"registryDependencies": ["mikareich/kit/cn", "mikareich/kit/theme"],
 			"title": "Kit",
 			"type": "registry:base"
 		}
