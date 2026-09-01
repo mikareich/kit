@@ -1,11 +1,12 @@
 # dependencies (bun install)
 node_modules
 
-test-consumer
+tests/repo
 
 # output
 out
 dist
+.next
 *.tgz
 
 # code coverage

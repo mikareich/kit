@@ -1,0 +1,36 @@
+---
+title: Button
+description: An action primitive with filled, outlined, ghost, icon, loading, and polymorphic modes.
+---
+
+import { buttonStory } from '@/ui/button.story';
+
+The Button extends the native button element and supports semantic display modes, optional icons, loading feedback, and Radix Slot composition. The preview below renders the canonical `ui/src/button.tsx` implementation.
+
+## Interactive preview
+
+Use the controls to change `mode`, `disabled`, `loading`, the label, and icon visibility. Additional presets demonstrate fixed outlined, ghost, icon, and `asChild` states.
+
+<buttonStory.WithControl />
+
+## Installation
+
+```bash
+bunx shadcn add https://kit.reich.re/r/button.json
+```
+
+The Button registry item also installs its base dependencies, including the Kit theme and `cn` utility.
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button";
+
+export function SaveButton() {
+  return <Button mode="filled">Save changes</Button>;
+}
+```
+
+## Variants
+
+Use `filled` for primary actions, `outlined` for secondary actions, `ghost` for low-emphasis actions, and `icon` for square icon-only controls. `asChild` delegates rendering to its child through Radix Slot while preserving Button styling.

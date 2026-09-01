@@ -1,0 +1,26 @@
+---
+title: Kit
+description: Reusable primitives distributed through a shadcn registry.
+---
+
+Kit is a small collection of reusable UI primitives, styles, and utilities. This site documents the same source files that the registry distributes.
+
+## Install from the registry
+
+Add the Kit namespace to a project configured for shadcn:
+
+```bash
+bunx shadcn registry add @kit=https://kit.reich.re/r/{name}.json
+```
+
+Then install an item:
+
+```bash
+bunx shadcn add @kit/button
+```
+
+## Documentation
+
+- [Button](./components/button.mdx) combines written guidance with an interactive component story.
+- [Theming](./theming.mdx) explains the semantic theme modes and Tailwind utilities.
+- [`/r/registry.json`](/r/registry.json) exposes the resolved registry catalog.

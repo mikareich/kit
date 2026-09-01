@@ -10,7 +10,7 @@
 				"react"
 			],
 			"description": "The Button primitive.",
-			"docs": "https://kit.reich.re/?path=/docs/ui-button--docs",
+			"docs": "https://kit.reich.re/docs/components/button",
 			"files": [
 				{
 					"path": "./src/button.tsx",
@@ -27,7 +27,7 @@
 			"author": "Mika Reich <mika@reich.re>",
 			"dependencies": ["tailwindcss"],
 			"description": "Theme styles and Tailwind utilities.",
-			"docs": "https://kit.reich.re/",
+			"docs": "https://kit.reich.re/docs/theming",
 			"files": [
 				{
 					"path": "./src/theme.css",

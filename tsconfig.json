@@ -1,9 +1,12 @@
 {
 	"compilerOptions": {
+		"allowArbitraryExtensions": true,
 		"allowImportingTsExtensions": true,
 		"allowJs": true,
+		"esModuleInterop": true,
+		"incremental": true,
 		"jsx": "react-jsx",
-		"lib": ["ESNext"],
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
 		"module": "Preserve",
 		"moduleDetection": "force",
 		"moduleResolution": "bundler",
@@ -14,14 +17,26 @@
 		"noUncheckedIndexedAccess": true,
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
+		"paths": {
+			"@/app/*": ["./app/*"],
+			"@/lib/*": ["./lib/src/*"],
+			"@/mdx-components.tsx": ["./mdx-components.tsx"],
+			"@/ui/*": ["./ui/src/*"]
+		},
+		"plugins": [{ "name": "next" }],
+		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"strict": true,
 		"target": "ESNext",
-		"types": ["bun"],
-		"verbatimModuleSyntax": true,
-		"paths": {
-			"@/lib/*": ["./lib/src/*"],
-			"@/ui/*": ["./ui/src/*"]
-		}
-	}
+		"verbatimModuleSyntax": true
+	},
+	"exclude": ["node_modules", "docs", "generated", "tests"],
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.mdx",
+		".next/types/**/*.ts",
+		".next/dev/types/**/*.ts"
+	]
 }

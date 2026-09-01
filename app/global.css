@@ -1,0 +1,8 @@
+@import "../ui/src/theme.css";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+@import "@fumadocs/story/css/preset.css";
+
+body {
+	background-color: var(--color-fd-background);
+}

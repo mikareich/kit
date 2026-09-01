@@ -1,6 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry.json",
-	"homepage": "kit.reich.re",
+	"homepage": "https://kit.reich.re",
 	"include": ["lib/registry.json", "ui/registry.json"],
 	"items": [
 		{

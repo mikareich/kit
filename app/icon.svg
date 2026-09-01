@@ -1,0 +1,5 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+	<title>Kit</title>
+	<rect fill="#3b82f6" height="64" rx="12" width="64" />
+	<path d="M18 14h8v15l14-15h10L34 31l17 19H40L26 34v16h-8z" fill="#fff" />
+</svg>

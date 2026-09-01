@@ -1,0 +1,33 @@
+---
+title: Theming
+description: Semantic Kit colors, modes, typography, and Tailwind utilities.
+---
+
+Kit's canonical theme is `ui/src/theme.css`. Registry consumers receive that exact stylesheet through the `theme` item; the documentation application imports it directly rather than maintaining a copy.
+
+## Semantic colors
+
+The theme maps semantic variables into Tailwind colors including:
+
+```text
+bg-theme-bg
+bg-theme-primary
+text-theme-text
+border-theme-border
+```
+
+Components use semantic names instead of hard-coded palettes, so their intent remains stable across modes.
+
+## Modes
+
+The `default`, `error`, and `warning` classes provide contextual values for the same semantic variables. Apply a mode class around a component subtree to change its visual meaning without changing component props.
+
+```tsx
+<div className="warning">
+  <Button mode="filled">Continue with caution</Button>
+</div>
+```
+
+## Typography
+
+The theme defines the `text-action` and `text-body` utilities. Button labels use `text-action`; prose and application copy can use `text-body`.
