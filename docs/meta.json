@@ -1,4 +1,4 @@
 {
-	"pages": ["index", "components", "theming"],
+	"pages": ["index", "theming", "components"],
 	"title": "Kit"
 }
