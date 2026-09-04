@@ -116,6 +116,7 @@ export function Button({
 				buttonStyles({ disabled: effectiveDisabled, mode }),
 				className,
 			)}
+			disabled={effectiveDisabled}
 			{...props}
 		>
 			{effectivePrefixIcon !== null && effectivePrefixIcon !== undefined && (
