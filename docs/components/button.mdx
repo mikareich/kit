@@ -1,0 +1,64 @@
+---
+title: Button
+description: A styled and extended version of the native button element.
+---
+
+import {
+	BUTTON_ARBITRARY_STORY,
+	BUTTON_MODE_STORY,
+	BUTTON_LOADING_STORY,
+	BUTTON_THEMES_STORY
+} from '@/ui/button.story';
+import { Button } from '@/ui/button';
+
+<BUTTON_ARBITRARY_STORY />
+
+The button primitive comes with several new properties to aid with the semantics
+of the button.
+
+## Properties
+
+Consumers can apply all common properties to the button element
+or the child element in case
+[radix's slot feature](https://www.radix-ui.com/primitives/docs/utilities/slot)
+was enabled.
+
+### Button Modes
+
+The `mode` property can take the following values:
+`filled` (default) | `outlined` | `ghost` | `icon`.
+Note that the `icon` variant only renderes the children, disregarding the
+`prefixIcon` and `suffixIcon`.
+
+<BUTTON_MODE_STORY />
+
+### Loading State
+
+The `loading` property is used to indicate a loading state (trivial) by
+replacing or inserting into the `prefixIcon` slot or the `children` slot in case
+that the mode is `icon`. It renders a loading spinner and set's the `disabled`
+property.
+
+<BUTTON_LOADING_STORY />
+
+### Affix Icons
+
+The `prefixIcon` and `suffixIcon` properties slot the affix icons into the
+aligned container of the button. They have no use if the `mode` is set to
+`icon`.
+
+### Radix Slot
+
+The `asChild` property activates
+[radix's slot feature](https://www.radix-ui.com/primitives/docs/utilities/slot).
+It hoists the child as root container of the primitve, applying all styles and
+merging the properties applied to the button and child. Note that there must be
+one parent child element present when activating this property.
+
+## Theming
+
+The button primitive acts on defined themes, defaulting to the `.default` theme.
+You can apply `.default`, `.info` or `.error` themes on the button by passing
+the classes to the element.
+
+<BUTTON_THEMES_STORY />

@@ -1,32 +1,5 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.5.10/schema.json",
-	"extends": ["./lib/src/biome/base.json"],
-	"overrides": [
-		{
-			"includes": [
-				"app/**/*.{ts,tsx}",
-				"next.config.mjs",
-				"postcss.config.mjs"
-			],
-			"linter": {
-				"rules": {
-					"style": {
-						"noDefaultExport": "off",
-						"useComponentExportOnlyModules": "off"
-					}
-				}
-			}
-		},
-		{
-			"includes": ["lib/src/**/*.{ts,tsx}", "ui/src/**/*.{ts,tsx}"],
-			"linter": {
-				"rules": {
-					"correctness": {
-						"useImportExtensions": "off"
-					}
-				}
-			}
-		}
-	],
+	"extends": ["./lib/biome-base.json"],
 	"root": true
 }

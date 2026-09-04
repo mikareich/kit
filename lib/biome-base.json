@@ -23,28 +23,26 @@
 	},
 	"linter": {
 		"domains": {
-			"drizzle": "all",
-			"next": "all",
-			"react": "all",
+			"drizzle": "recommended",
+			"next": "recommended",
+			"react": "recommended",
 			"solid": "none",
-			"tailwind": "all"
+			"tailwind": "recommended"
 		},
-		"enabled": true,
-		"rules": {
-			"a11y": "on",
-			"complexity": "on",
-			"correctness": {
-				"noNodejsModules": "off",
-				"preset": "all"
-			},
-			"nursery": "on",
-			"performance": "on",
-			"preset": "recommended",
-			"security": "on",
-			"style": "on",
-			"suspicious": "on"
-		}
+		"enabled": true
 	},
+	"overrides": [
+		{
+			"includes": ["*.config.(ts,js)"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "off"
+					}
+				}
+			}
+		}
+	],
 	"root": false,
 	"vcs": {
 		"clientKind": "git",

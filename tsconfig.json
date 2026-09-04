@@ -18,10 +18,7 @@
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 		"paths": {
-			"@/app/*": ["./app/*"],
-			"@/lib/*": ["./lib/src/*"],
-			"@/mdx-components.tsx": ["./mdx-components.tsx"],
-			"@/ui/*": ["./ui/src/*"]
+			"@/*": ["./*"]
 		},
 		"plugins": [{ "name": "next" }],
 		"resolveJsonModule": true,

@@ -13,7 +13,7 @@
 			"docs": "https://kit.reich.re/docs/components/button",
 			"files": [
 				{
-					"path": "./src/button.tsx",
+					"path": "./button.tsx",
 					"target": "@ui/button.tsx",
 					"type": "registry:ui"
 				}
@@ -30,7 +30,7 @@
 			"docs": "https://kit.reich.re/docs/theming",
 			"files": [
 				{
-					"path": "./src/theme.css",
+					"path": "./theme.css",
 					"target": "@components/theme.css",
 					"type": "registry:style"
 				}

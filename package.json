@@ -23,7 +23,7 @@
 		"@types/react": "19.2.18",
 		"@types/react-dom": "19.2.5",
 		"postcss": "8.5.26",
-		"typescript": "7.0.2"
+		"typescript": "^7.0.2"
 	},
 	"exports": {
 		"./biome.json": "./lib/src/biome/base.json"

@@ -8,7 +8,7 @@
 			"docs": "https://kit.reich.re/",
 			"files": [
 				{
-					"path": "./src/cn.ts",
+					"path": "./cn.ts",
 					"target": "@lib/cn.ts",
 					"type": "registry:lib"
 				}
@@ -24,7 +24,7 @@
 			"docs": "https://kit.reich.re/",
 			"files": [
 				{
-					"path": "./src/biome/base.json",
+					"path": "./biome-base.json",
 					"target": "~/biome.json",
 					"type": "registry:file"
 				}

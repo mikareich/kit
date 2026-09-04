@@ -3,7 +3,7 @@ import { Slot, Slottable } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import type React from "react";
 import { cloneElement, isValidElement } from "react";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/cn.ts";
 
 const buttonStyles = cva(
 	`
@@ -64,7 +64,7 @@ type ButtonProps = React.ComponentProps<"button"> & {
 	suffixIcon?: React.ReactNode;
 	asChild?: boolean;
 	loading?: boolean;
-	mode: "filled" | "outlined" | "ghost" | "icon";
+	mode?: "filled" | "outlined" | "ghost" | "icon";
 };
 
 /**
