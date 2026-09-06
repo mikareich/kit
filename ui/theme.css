@@ -57,6 +57,10 @@
 	--color-theme-border: var(--theme-border);
 }
 
+@utility outlined {
+	@apply ring-3 ring-theme-primary/50;
+}
+
 @utility text-heading-1 {
 	@apply font-heading font-bold mt-0 mb-8 text-3xl;
 }

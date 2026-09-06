@@ -7,6 +7,7 @@ import { extendTailwindMerge } from "tailwind-merge";
 const twMerge = extendTailwindMerge<string, string>({
 	extend: {
 		classGroups: {
+			outlined: ["outlined"],
 			"semantic-theme": ["default", "error", "warning"],
 			"text-styles": [
 				{
@@ -23,6 +24,7 @@ const twMerge = extendTailwindMerge<string, string>({
 			],
 		},
 		conflictingClassGroups: {
+			outlined: ["ring-w", "ring-color"],
 			"text-styles": [
 				"font-family",
 				"font-size",

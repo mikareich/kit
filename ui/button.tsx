@@ -12,6 +12,7 @@ const buttonStyles = cva(
 	cursor-pointer
 	transition-all
 	text-action
+	focus-within:outline-none
 	`,
 	{
 		compoundVariants: [
@@ -35,6 +36,9 @@ const buttonStyles = cva(
 				true: `
 		          opacity-50 cursor-not-allowed
 							`,
+				false:	`
+								focus-within:outlined
+								`
 			},
 			mode: {
 				filled: `
