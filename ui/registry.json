@@ -25,6 +25,23 @@
 		},
 		{
 			"author": "Mika Reich <mika@reich.re>",
+			"dependencies": ["class-variance-authority", "react"],
+			"description": "The Input primitive.",
+			"docs": "https://kit.reich.re/docs/components/input",
+			"files": [
+				{
+					"path": "./input.tsx",
+					"target": "@ui/input.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"name": "input",
+			"registryDependencies": ["mikareich/kit/base"],
+			"title": "Input",
+			"type": "registry:ui"
+		},
+		{
+			"author": "Mika Reich <mika@reich.re>",
 			"dependencies": ["tailwindcss"],
 			"description": "Theme styles and Tailwind utilities.",
 			"docs": "https://kit.reich.re/docs/theming",

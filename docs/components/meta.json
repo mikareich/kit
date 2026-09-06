@@ -1,4 +1,4 @@
 {
-	"pages": ["button"],
+	"pages": ["button", "input"],
 	"title": "Components"
 }
