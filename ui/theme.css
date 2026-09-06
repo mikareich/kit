@@ -57,10 +57,30 @@
 	--color-theme-border: var(--theme-border);
 }
 
-@utility text-action {
-	@apply font-heading uppercase font-medium text-base leading-none select-none;
+@utility text-heading-1 {
+	@apply font-heading font-bold mt-0 mb-8 text-3xl;
+}
+
+@utility text-heading-2 {
+	@apply font-heading font-bold mt-9 mb-4 text-2xl;
+}
+
+@utility text-heading-3 {
+	@apply font-heading font-bold mt-6 mb-2 text-xl;
+}
+
+@utility text-heading-4 {
+	@apply font-heading font-bold mt-6 mb-2 text-lg;
 }
 
 @utility text-body {
 	@apply font-body font-normal text-base leading-loose select-text;
+}
+
+@utility text-action {
+	@apply font-body uppercase font-medium text-base leading-none select-none;
+}
+
+@utility text-small {
+	@apply font-body uppercase font-normal text-xs leading-loose select-text;
 }

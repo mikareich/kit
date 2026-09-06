@@ -3,31 +3,63 @@ title: Theming
 description: Semantic Kit colors, modes, typography, and Tailwind utilities.
 ---
 
-Kit's canonical theme is `ui/src/theme.css`. Registry consumers receive that exact stylesheet through the `theme` item; the documentation application imports it directly rather than maintaining a copy.
+The foundation of this design system is defined in the base style-sheet under
+`@/components/theme.css`. It defines the color theme, typography styles and
+some handy
+[tailwind utilities](https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities).
 
-## Semantic colors
+## Installation
 
-The theme maps semantic variables into Tailwind colors including:
+You may not need to install this manually. Note that many other items of this
+registry depend on this item, therefore installing those components
+automatically installs this base item.
 
-```text
-bg-theme-bg
-bg-theme-primary
-text-theme-text
-border-theme-border
+```bash
+bunx shadcn add mikareich/kit/base
 ```
 
-Components use semantic names instead of hard-coded palettes, so their intent remains stable across modes.
-
-## Modes
-
-The `default`, `error`, and `warning` classes provide contextual values for the same semantic variables. Apply a mode class around a component subtree to change its visual meaning without changing component props.
-
-```tsx
-<div className="warning">
-  <Button mode="filled">Continue with caution</Button>
-</div>
-```
+If this is the first item you install from this registry, replace the `add`
+command with `init`.
 
 ## Typography
 
-The theme defines the `text-action` and `text-body` utilities. Button labels use `text-action`; prose and application copy can use `text-body`.
+The resolved design system comes with some tailwind utilities for semantic
+text styles defined in the `theme.css` file. In order for those utilities to
+properly work, you must maintain the config in `cn.ts` file.
+
+| class name       | example                                          |
+| ---------------- | ------------------------------------------------ |
+| `text-heading-1` | <h1 className="text-heading-1">Heading 1</h1>    |
+| `text-heading-2` | <h2 className="text-heading-2">Heading 2</h2>    |
+| `text-heading-3` | <h3 className="text-heading-3">Heading 3</h3>    |
+| `text-heading-4` | <h4 className="text-heading-4">Heading 4</h4>    |
+| `text-body`      | <p className="text-body">Text Body</p>           |
+| `text-action`    | <p className="text-action">Text Action</p>       |
+| `text-small`     | <small className="text-small">Text Small</small> |
+
+## Semantic colors
+
+The design system uses some semantic color variables, usally prefixed with
+`theme-`:
+
+- `theme-bg` for the base background color.
+- `theme-bg-accent` for frames that should distinguish from the base background.
+- `theme-primary` for the primary accent color of the app.
+- `theme-foreground` for texts in front of the `theme-primary` color.
+- `theme-foreground-subtle` for subtle texts in front of the `theme-primary`
+  color.
+- `theme-text` for the base texts in front of the `theme-bg` or
+  `theme-bg-accent`.
+- `theme-text-subtle` for base texts that are less important.
+- `theme-border` as base border color.
+
+### Modes
+
+There are several modes used to distinguish different app states:
+
+1. `.default` uses the default color theme.
+2. `.warning` to highlight important UI elements.
+3. `.error` to render error states.
+
+You can apply those classes to switch the values used for the named semantic
+theme variables.

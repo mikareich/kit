@@ -8,7 +8,19 @@ const twMerge = extendTailwindMerge<string, string>({
 	extend: {
 		classGroups: {
 			"semantic-theme": ["default", "error", "warning"],
-			"text-styles": [{ text: ["action", "body"] }],
+			"text-styles": [
+				{
+					text: [
+						"heading-1",
+						"heading-2",
+						"heading-3",
+						"heading-4",
+						"body",
+						"action",
+						"small",
+					],
+				},
+			],
 		},
 		conflictingClassGroups: {
 			"text-styles": [
@@ -19,18 +31,6 @@ const twMerge = extendTailwindMerge<string, string>({
 				"text-transform",
 				"text-color",
 				"select",
-			],
-		},
-		theme: {
-			text: [
-				"theme-title",
-				"theme-h1",
-				"theme-h2",
-				"theme-h3",
-				"theme-h4",
-				"theme-lg",
-				"theme-base",
-				"theme-sm",
 			],
 		},
 	},

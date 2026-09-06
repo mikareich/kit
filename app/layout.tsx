@@ -23,7 +23,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning={true}>
 			<body className="flex min-h-screen flex-col">
-				<RootProvider theme={{ enabled: true }}>
+				<RootProvider>
 					<DocsLayout tree={source.getPageTree()} {...baseOptions()}>
 						{children}
 					</DocsLayout>
