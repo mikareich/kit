@@ -3,7 +3,10 @@ title: Input
 description: A styled version of the native input element with optional affix icons.
 ---
 
-import { INPUT_ARBITRARY_STORY } from '@/ui/input.story';
+import {
+	INPUT_ARBITRARY_STORY,
+	INPUT_THEMES_STORY
+} from '@/ui/input.story';
 
 <INPUT_ARBITRARY_STORY />
 
@@ -20,3 +23,10 @@ bunx shadcn add mikareich/kit/input
 
 If this is the first item you install from this registry, replace the `add`
 command with `init`.
+
+## Theming
+
+The input uses the active theme's background, text, border, and focus colors.
+Apply the `.warning` or `.error` theme class directly to the input container.
+
+<INPUT_THEMES_STORY />
