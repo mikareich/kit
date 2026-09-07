@@ -42,6 +42,23 @@
 		},
 		{
 			"author": "Mika Reich <mika@reich.re>",
+			"dependencies": ["@radix-ui/react-slot", "next", "react"],
+			"description": "A layout primitive for composing navigation bars, headers, and footers.",
+			"docs": "https://kit.reich.re/docs/components/app-bar",
+			"files": [
+				{
+					"path": "./app-bar.tsx",
+					"target": "@ui/app-bar.tsx",
+					"type": "registry:ui"
+				}
+			],
+			"name": "app-bar",
+			"registryDependencies": ["mikareich/kit/base"],
+			"title": "App Bar",
+			"type": "registry:ui"
+		},
+		{
+			"author": "Mika Reich <mika@reich.re>",
 			"dependencies": ["tailwindcss"],
 			"description": "Theme styles and Tailwind utilities.",
 			"docs": "https://kit.reich.re/docs/theming",

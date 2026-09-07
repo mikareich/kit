@@ -1,0 +1,42 @@
+---
+title: App Bar
+description: A layout primitive for composing navigation bars, headers, and footers.
+---
+
+import {
+	APP_BAR_ARBITRARY_STORY,
+	APP_BAR_THEMES_STORY
+} from '@/ui/app-bar.story';
+
+<APP_BAR_ARBITRARY_STORY />
+
+`AppBar` provides a horizontal layout for composed navigation surfaces.
+`AppBar.Item` accepts the properties of Next.js `Link` and renders one by
+default. `AppBar.Logo` is an emphasized `AppBar.Item` intended for a brand mark.
+
+## Installation
+
+```bash
+bunx shadcn add mikareich/kit/app-bar
+```
+
+If this is the first item you install from this registry, replace the `add`
+command with `init`.
+
+## Radix Slot
+
+`AppBar` requires `asChild` and always hoists its single child as the visual
+root container. This lets consumers choose the appropriate semantic element,
+such as `nav`, `header`, or `footer`.
+
+Pass `asChild` to `AppBar.Item` or `AppBar.Logo` to hoist their child instead of
+rendering a Next.js `Link`. Each slotted component must receive one child
+element.
+
+## Theming
+
+The app bar uses the active theme's surface, text, and interaction colors.
+Apply `.warning` or `.error` through the root `className` property to theme the
+entire composition.
+
+<APP_BAR_THEMES_STORY />
