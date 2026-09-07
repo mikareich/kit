@@ -62,7 +62,7 @@
 }
 
 @utility text-link {
-	@apply text-theme-primary underline focus-visible:outline-none focus-visible:outlined;
+	@apply text-theme-primary underline decoration-current focus-visible:outline-none focus-visible:outlined;
 }
 
 @utility text-heading-1 {
