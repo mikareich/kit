@@ -61,6 +61,10 @@
 	@apply ring-3 ring-theme-primary/50;
 }
 
+@utility text-link {
+	@apply text-theme-primary underline focus-visible:outline-none focus-visible:outlined;
+}
+
 @utility text-heading-1 {
 	@apply font-heading font-bold mt-0 mb-8 text-3xl;
 }
